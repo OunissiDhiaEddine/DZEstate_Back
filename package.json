@@ -1,0 +1,18 @@
+{
+  "name": "dzestate_back",
+  "version": "1.0.0",
+  "description": "The brains behind the dzestate platform ",
+  "scripts": {
+    "dev": "nodemon server"
+  },
+  "author": "dzestate team",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoos": "^0.0.1-security",
+    "mongoose": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
