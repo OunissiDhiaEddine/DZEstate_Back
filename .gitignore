@@ -31,3 +31,6 @@ coverage
 
 # for serverconfig ask didou for access 
 serverconfig.js 
+
+# for env 
+.env
