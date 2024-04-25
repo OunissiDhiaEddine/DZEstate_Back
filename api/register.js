@@ -3,13 +3,11 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const Cors = require('micro-cors');
 const cors = Cors();
-const { parse } = require('micro-json');
 const connectDb = require('../connectDb');
 
 module.exports = cors(async (req, res) => {
   await connectDb();
-  const body = await parse(req);
-  const { username, email, password } = body;
+  const { username, email, password } = req.body;
 
   let user = await User.findOne({ email });
   if (user) {
