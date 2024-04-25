@@ -2,15 +2,13 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const Cors = require('micro-cors');
-const cors = Cors({
-  allowMethods: ['POST', 'GET', 'PUT', 'DELETE'],
-  origin: '*' // replace '*' with your Vue.js application's origin in production
-});
+const cors = Cors();
+const json = require('micro-json');
 const connectDb = require('../connectDb');
 
 module.exports = cors(async (req, res) => {
   await connectDb();
-  const { username, email, password } = req.body;
+  const { username, email, password } = await json(req);
 
   let user = await User.findOne({ email });
   if (user) {
