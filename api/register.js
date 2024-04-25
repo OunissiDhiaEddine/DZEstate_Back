@@ -1,9 +1,11 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
+const Cors = require('micro-cors');
+const cors = Cors();
 const connectDb = require('../connectDb');
 
-module.exports = async (req, res) => {
+module.exports = cors(async (req, res) => {
   await connectDb();
   const { username, email, password } = req.body;
 
@@ -35,4 +37,4 @@ module.exports = async (req, res) => {
       res.json({ token });
     }
   );
-};
+});
