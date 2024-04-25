@@ -1,4 +1,3 @@
-// outdated delete later after the vercel testing
 
 const express = require('express');
 const mongoose = require('mongoose');
