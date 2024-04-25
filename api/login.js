@@ -1,8 +1,11 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
+const connectDb = require('../connectDb');
+
 
 module.exports = async (req, res) => {
+    await connectDb();
   const { email, password } = req.body;
 
   let user = await User.findOne({ email });
