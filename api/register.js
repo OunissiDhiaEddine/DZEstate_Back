@@ -8,8 +8,8 @@ const connectDb = require('../connectDb');
 module.exports = cors(async (req, res) => {
   await connectDb();
 
-  // Destructure the request body
-  const { username, email, password } = req.body;
+
+  const { username, email, password } = await json(req);
 
   let user = await User.findOne({ email });
   if (user) {
