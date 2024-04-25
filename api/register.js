@@ -1,4 +1,3 @@
-const { json } = require('micro');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
@@ -9,8 +8,8 @@ const connectDb = require('../connectDb');
 module.exports = cors(async (req, res) => {
   await connectDb();
 
-
-  const { username, email, password } = await json(req);
+  // Destructure the request body
+  const { username, email, password } = req.body;
 
   let user = await User.findOne({ email });
   if (user) {
