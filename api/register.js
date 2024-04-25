@@ -2,7 +2,10 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const Cors = require('micro-cors');
-const cors = Cors();
+const cors = Cors({
+  allowMethods: ['POST', 'GET', 'PUT', 'DELETE'],
+  origin: '*' // replace '*' with your Vue.js application's origin in production
+});
 const connectDb = require('../connectDb');
 
 module.exports = cors(async (req, res) => {
