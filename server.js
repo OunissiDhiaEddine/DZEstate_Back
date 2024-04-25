@@ -5,7 +5,6 @@ const { MONGO_URI } = require('./serverconfig');
 require('dotenv').config();
 
 // import routes and apis 
-const postsRoutes = require('./api/posts');
 const authRoutes = require('./api/auth');
 
 const app = express();
@@ -24,7 +23,6 @@ mongoose.connect(MONGO_URI,
     .catch(err => console.log(err));
 
 // 7at lhna routes and apis 
-app.use('/api/posts', postsRoutes);
 app.use('/api/auth', authRoutes);
 
 const PORT = process.env.PORT || 3000;
