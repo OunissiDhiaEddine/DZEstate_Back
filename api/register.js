@@ -7,7 +7,9 @@ const connectDb = require('../connectDb');
 
 module.exports = cors(async (req, res) => {
   await connectDb();
-  const { username, email, password } = req.body;
+
+  // Parse the request body
+  const { username, email, password } = await req.json();
 
   let user = await User.findOne({ email });
   if (user) {
