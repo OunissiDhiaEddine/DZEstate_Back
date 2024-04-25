@@ -2,7 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const { MONGO_URI } = require('./serverconfig');
+
 require('dotenv').config();
 
 // import routes and apis 
@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json()); 
 
 // Connecting L DZEstate database fi mongodb atlas 
-mongoose.connect(MONGO_URI,
+mongoose.connect(process.env.MONGO_URI,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
