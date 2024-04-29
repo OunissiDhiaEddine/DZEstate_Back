@@ -16,10 +16,11 @@ app.use(cors());
 app.use(express.json()); 
 
 // Connecting L DZEstate database fi mongodb atlas 
-mongoose.connect(process.env.MONGO_URI,
+mongoose.connect(process.env.COSMOSDB_URI,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
+        retryWrites: false,
     })
     .then(() => console.log('Connected to database'))
     .catch(err => console.log(err));
