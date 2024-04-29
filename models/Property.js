@@ -24,6 +24,10 @@ const PropertySchema = new Schema({
     ref: 'User',
     required: true,
   },
+  images: {
+    type: [String],
+    required: false,
+  },
 });
 
 module.exports = mongoose.model('Property', PropertySchema);
