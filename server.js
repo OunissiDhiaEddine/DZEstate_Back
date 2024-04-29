@@ -7,6 +7,7 @@ require('dotenv').config();
 
 // import routes and apis 
 const authRoutes = require('./api/auth');
+const propRoutes = require('./api/prop');
 
 const app = express();
 
@@ -25,6 +26,7 @@ mongoose.connect(process.env.MONGO_URI,
 
 // 7at lhna routes and apis 
 app.use('/api/auth', authRoutes);
+app.use('/api/prop', propRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Test server aw ymchi at port:  ${PORT}`));
