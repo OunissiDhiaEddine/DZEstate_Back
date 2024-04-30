@@ -9,8 +9,7 @@ const fs = require('fs');
 const util = require('util');
 const unlinkFile = util.promisify(fs.unlink);
 
-const upload = multer({ dest: 'uploads/' }); // this will store uploaded files in an 'uploads' directory
-
+const upload = multer({ dest: 'uploads/' }); 
 const blobServiceClient = BlobServiceClient.fromConnectionString(process.env.AZURE_STORAGE_CONNECTION_STRING);
 const containerClient = blobServiceClient.getContainerClient('propimages');
 

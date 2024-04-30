@@ -8,6 +8,8 @@ require('dotenv').config();
 // import routes and apis 
 const authRoutes = require('./api/auth');
 const propRoutes = require('./api/prop');
+const propsyncRoutes = require('./api/propsync');
+const dashRoutes = require('./api/dash');
 
 const app = express();
 
@@ -28,6 +30,8 @@ mongoose.connect(process.env.COSMOSDB_URI,
 // 7at lhna routes and apis 
 app.use('/api/auth', authRoutes);
 app.use('/api/prop', propRoutes);
+app.use('/api/propsync', propsyncRoutes);
+app.use('/api/dash', dashRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Test server aw ymchi at port:  ${PORT}`));
