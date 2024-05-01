@@ -1,4 +1,4 @@
-// hada signup signin api 
+// hada signup signin api for access POST /api/auth/register and POST /api/auth/login
 
 
 const express = require('express');

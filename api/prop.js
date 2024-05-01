@@ -1,3 +1,5 @@
+// Hada API to create a prop , for use /api/prop 
+
 const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');

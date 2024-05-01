@@ -1,3 +1,6 @@
+// api to Fetch all properties with GET /api/propsync , also you can define query parameters to filter the results 
+
+
 const express = require('express');
 const router = express.Router();
 const Property = require('../models/Property'); 

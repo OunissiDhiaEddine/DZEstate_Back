@@ -1,3 +1,5 @@
+// api for the dash , it gets user data with GET /api/dash and updates user data with PUT /api/dash/update
+
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
