@@ -29,6 +29,11 @@ const PropertySchema = new Schema({
     type: [String],
     required: false,
   },
+  type: {
+    type: String,
+    enum: ['f1', 'f2', 'f3', 'f4', 'f5', 'f6'], 
+    required: false,
+  },
 });
 
 module.exports = mongoose.model('Property', PropertySchema);

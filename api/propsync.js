@@ -13,6 +13,7 @@ router.get('/', async (req, res) => {
       if (req.query.description) query.description = req.query.description;
       if (req.query.price) query.price = { $gte: req.query.price };
       if (req.query.location) query.location = req.query.location;
+      if(req.query.type) query.type = req.query.type; 
   
       const properties = await Property.find(query);
       res.json(properties);

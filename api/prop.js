@@ -55,6 +55,7 @@ router.post('/', upload.array('images', 10), async (req, res) => {
       location: req.body.location,
       owner: user.id,
       images: fileNames, 
+      type: req.body.type, 
     });
 
     await property.save();
